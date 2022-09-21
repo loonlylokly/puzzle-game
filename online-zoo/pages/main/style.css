@@ -10,12 +10,11 @@
     --black-blue: #333b41;
 }
 
-@font-face {
+/* @font-face {
     font-family: "Roboto";
     font-weight: 700;
     font-style: normal;
     src: local("Roboto-Bold"), 
-        /* url(../../assets/fonts/Roboto-Bold.woff2) format("woff2"), */
         url(../../assets/fonts/Roboto-Bold.woff) format("woff"),
         url(../../assets/fonts/Roboto-Bold.eot) format("eot");
     font-display: swap;
@@ -26,7 +25,6 @@
     font-weight: 300;
     font-style: normal;
     src: local("Roboto-Light"), 
-        /* url(../../assets/fonts/Roboto-Light.woff2) format("woff2"), */
         url(../../assets/fonts/Roboto-Light.woff) format("woff"),
         url(../../assets/fonts/Roboto-Light.eot) format("eot");
     font-display: swap;
@@ -37,7 +35,6 @@
     font-weight: 500;
     font-style: normal;
     src: local("Roboto-Medium"), 
-        /* url(../../assets/fonts/Roboto-Medium.woff2) format("woff2"), */
         url(../../assets/fonts/Roboto-Medium.woff) format("woff"),
         url(../../assets/fonts/Roboto-Medium.eot) format("eot");
     font-display: swap;
@@ -48,11 +45,10 @@
     font-weight: 400;
     font-style: normal;
     src: local("Roboto-Regular"), 
-        /* url(../../assets/fonts/Roboto-Regular.woff2) format("woff2"), */
         url(../../assets/fonts/Roboto-Regular.woff) format("woff"),
         url(../../assets/fonts/Roboto-Regular.eot) format("eot");
     font-display: swap;
-}
+} */
 
 
 html {
@@ -115,9 +111,59 @@ body {
     font-weight: 500;
 }
 
+.intro-panda {
+    width: 100%;
+}
+
+.intro {
+    height: 780px;
+    width: 1600px;
+    background: url(../../assets/images/Giant\ Panda.png) no-repeat center;
+    background-size: cover;
+}
+
+.intro-wrap {
+    width: 465px;
+    height: 539px;
+    /* margin-top: 92px; */
+    margin-left: 807px;
+    padding-top: 92px;
+    /* padding-left: 807px; */
+}
 
 .circle-orange {
     width: 465px;
     height: 465px;
+    background-color: var(--orange);
+    border-radius: 300px;
+}
+
+h1 {
+    position: absolute;
+    top: 166px;
+    padding-left: 82px;
+    height: 100%;
+    margin: 0;
+    font-weight: 700;
+    font-size: 106.5px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 75%;
+    color: #fff;
+}
+
+.btn-default {
+    width: 298px;
+    height: 54px;
+    margin-top: 88px;
+    margin-left: 983px;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
     background-color: var(--orange);
 }
