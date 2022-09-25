@@ -4,39 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../assets/style/normalize.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> 
     <link href="style.css" rel="stylesheet">
     <title>PetStory Online</title>
 </head>
 <body>
+
     <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="/loonlylokly-JSFE2022Q3/online-zoo/pages/main/" class="navbar-logo">
-                    <img src="../../assets/images/logo.png" alt="logo">
-                </a>
-                <div class="navbar-wrap">
-                    <ul class="navbar-menu">
-                        <li><a href="#About">About</a></li>
-                        <li><a href="#Map">Map</a></li>
-                        <li><a href="#Zoos">Zoos</a></li>
-                        <li><a href="#Contact us">Contact us</a></li>
-                        <li><a href="#Designed by">Designed by &copy;</a></li>
-                    </ul>
+        <div class="wrapper">
+            <a href="/loonlylokly-JSFE2022Q3/online-zoo/pages/main/" class="navbar-logo">
+            <img src="../../assets/images/logo.png" alt="logo">
+            </a>
+            <nav class="header__navigation">
+                <ul class="navbar-menu">
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Map">Map</a></li>
+                    <li><a href="#Zoos">Zoos</a></li>
+                    <li><a href="#Contact us">Contact us</a></li>
+                    <li><a href="#Designed by">Designed by &copy;</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="promo">
+            <div class="wrapper">
+                <div class="promo__content">
+                    <p class="promo__text">Watch<br>your<br>favorite<br>animal<br>online<div class="circle-orange"></div></p>
+                    <button class="button button_rounded">Watch online</button>
                 </div>
             </div>
-        </nav>
-    </header>
-    <main class="main">
-        <div class="intro">
-            <div class="intro-wrap">
-                <div class="circle-orange"></div>
-                <h1>Watch<br>your<br>favorite<br>animal<br>online</h1>
+        </section>
+
+        <section class="backstage">
+            <div class="wrapper">
+                <div class="layout-2-column">
+                    <img src="../../assets/images/bamboo-cap.png" alt="bamboo-cap" class="bamboo-cap">
+                    <div class="backstage__text">
+                        <h2 class="backstage__text-h2">The Backstage of the Wilderness World.</h2>
+                        <p class="backstage__text-p">The site was founded on the basis of a volunteer movement to protect and care for animals.</p>
+                        <h3 class="backstage__text-h3">How it works</h3>
+                        <p class="backstage__text-p">The main goal is to help the animals, as well as the nature reserves and zoos where they are kept. We are currently working on video projects targeting pandas in China, eagles on an island near Los Angeles, alligators in Florida and gorillas in the Congo. These have a total of more than 1,500 mammals and reptiles.</p>
+                    </div>
+                </div>
             </div>
-            <button class="btn-default">Watch online</button>
-        </div>
+        </section>
+
+        <section class="animals">
+            <div class="wrapper">
+                <div class="animals-card">
+                    <div class="animals-card__top-part">
+                        <img src="../../assets/images/card-pandas.png" alt="card-pandas" class="card-pandas">
+                    </div>
+                    <div class="animals-card__bottom-part">
+                        <img src="../../assets/images/card-eagles.png" alt="card-eagles" class="card-eagles">
+                    </div>
+                </div>
+                <div class="animals-card">
+                    <div class="animals-card__top-part">
+                        <img src="../../assets/images/card-pandas.png" alt="card-pandas" class="card-pandas">
+                    </div>
+                    <div class="animals-card__bottom-part">
+                        <img src="../../assets/images/card-eagles.png" alt="card-eagles" class="card-eagles">
+                    </div>
+                </div>
+                <div class="animals-card">
+                    <div class="animals-card__top-part">
+                        <img src="../../assets/images/card-pandas.png" alt="card-pandas" class="card-pandas">
+                    </div>
+                    <div class="animals-card__bottom-part">
+                        <img src="../../assets/images/card-eagles.png" alt="card-eagles" class="card-eagles">
+                    </div>
+                </div>
+                <button class="button button_rounded">Choose your favorite</button>
+            </div>
+        </section>
+
+        <section class="pick-feed">
+            <div class="wrapper">
+                <div class="pick-feed__text">
+                    <h2>Pick and feed a friend</h2>
+                    <p class="subtitle">We know the animals bring you joy, and in these extraordinary times, we’re glad.</p>
+                    <p>During a time when the COVID-19 epidemic is touching all of our lives, we’re proud and glad that people around the world find joy in PatStory.</p>
+                    <p>Even though the zoo has reopened, we need you now more than ever to help us deal with these problems. Please consider a gift to our Emergency Support Fund.</p>
+                    <h3>How it works</h3>
+                </div>
+                <div class="layout-5-column">
+                    <div class="step">
+                        <img src="#" alt="credit card">
+                        <p>Pay with card</p>
+                    </div>
+                    <div class="step">
+                        <img src="#" alt="arrow">
+                    </div>
+                    <div class="step">
+                        <img src="#" alt="grow plant">
+                        <p>Pay with card</p>
+                    </div>
+                    <div class="step">
+                        <img src="#" alt="arrow">
+                    </div>
+                    <div class="step">
+                        <img src="#" alt="feed animal">
+                        <p>Pay with card</p>
+                    </div>
+                </div>
+                <button class="button button_rounded">Feed a friend now</button>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="wrapper">
+                <h3>Testimonials</h3>
+                <div class="layout-4-column">
+                    <div class="testimonials__card">
+                        <span></span>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div class="testimonials__card">
+                        <span></span>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div class="testimonials__card">
+                        <span></span>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div class="testimonials__card">
+                        <span></span>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <button>Leave Feedback</button>
+        </section>
     </main>
-</body>
+
+    <footer>
+        <div class="wrapper">
+            <div class="layout-3-column">
+                <div class="footer-one">
+                    <span></span>
+                    <button></button>
+                    <div class="nav">
+
+                    </div>
+                </div>
+                <div class="footer-two">
+                    <div class="nav">
+
+                    </div>
+                </div>
+                <div class="footer-three">
+                    <p class="subtitle">Subscribe to our news</p>
+                    <input type="text">
+                    <button>Submit</button>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </body>
 </html>
