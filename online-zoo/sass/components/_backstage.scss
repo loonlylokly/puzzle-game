@@ -1,0 +1,40 @@
+.backstage {
+    padding: 140px 0 180px 0;
+}
+
+.layout-2-column {
+    display: flex;
+}
+
+.backstage__text {
+    max-width: 465px;
+    margin-left: 87px;
+}
+
+.backstage__text-h2 {
+    margin: 0;
+    padding-bottom: 24px;
+    font-weight: 400;
+    font-size: 4.8rem;
+    line-height: 120%;
+}
+
+.backstage__text-p:first-of-type {
+    margin: 0;
+    padding-bottom: 54px;
+}
+
+.backstage__text-p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 130%;
+}
+
+.backstage__text-h3 {
+    margin: 0;
+    padding-bottom: 34px;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 120%;
+}
