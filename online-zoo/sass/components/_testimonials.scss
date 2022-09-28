@@ -1,12 +1,22 @@
-.layout-3-rows {
+.layout-4-rows {
     display: flex;
     flex-direction: column;
+    padding-top: 140px;
+    padding-bottom: 180px;
 }
 
 .layout-4-column {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 21px;
+}
+
+.testimonials-h3 {
+    font-size: 36px;
+    line-height: 130%;
+    text-align: center;
+    color: #333B41;
 }
 
 .testimonials__card-border-wrap {
@@ -19,8 +29,96 @@
     width: 268px;
     height: 391px;
     padding: 1rem;
+    padding-top: 15px;
     background: #F1F3F2;
     border-radius: 20px;
+    display: grid;
+    grid-template-areas: "ico name name"
+                         "ico location time"
+                         "desc desc desc";
+    grid-template-rows: 19px 18px 331px;
+    grid-template-columns: 37px 117px 82px;
+    justify-content: center;
+}
+
+.testimonials__ico {
+    margin: 0;
+    grid-column-start: ico;
+    grid-column-end:   ico;
+    grid-row-start: ico;
+    grid-row-end:   ico;
+}
+
+.testimonials__name {
+    margin: 0;
+    padding-left: 10px;
+    line-height: 120%;
+    color: #000000;
+    grid-column-start: name;
+    grid-column-end:   name;
+    grid-row-start: name;
+    grid-row-end:   name;
+}
+
+.testimonials__location {
+    margin: 0;
+    padding-left: 10px;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 120%;
+    color: #BDBDBD;
+    grid-column-start: location;
+    grid-column-end:   location;
+    grid-row-start: location;
+    grid-row-end:   location;
+}
+
+.testimonials__time {
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 120%;
+    color: #BDBDBD;
+    grid-column-start: time;
+    grid-column-end:   time;
+    grid-row-start: time;
+    grid-row-end:   time;
+}
+
+.testimonials__desc {
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 120%;
+    color: #767474;
+    grid-column-start: desc;
+    grid-column-end:   desc;
+    grid-row-start: desc;
+    grid-row-end:   desc;
+}
+
+.testimonials__slider-border {
+    width: 599px;
+    height: 8px;
+    margin-left: 280px;
+    margin-bottom: 31px;
+    background-image: $gradient-pink;
+    padding: 1px;
+    border-radius: 5px;
+}
+
+.testimonials__slider {
+    width: 598px;
+    height: 7px;
+    background: #F5F7F6;
+}
+
+.testimonials__slide {
+    width: 115.19px;
+    height: 6px;
+    background: #FE9013;
+    border-radius: 5px;
 }
 
 .button_round_square {
@@ -28,4 +126,6 @@
     height: 54px;
     background-image: $color-primary;
     border-radius: 5px;
+    border: 0;
+    color: #fff;
 }
