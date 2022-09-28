@@ -1,3 +1,73 @@
 .pick-feed {
     background: $gradient-orange;
+    opacity: 0.9;
+}
+
+.pick-feed .wrapper {
+    padding: 69px 0 100px 0;
+}
+
+.wrapper-pick-feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(253, 253, 255, 0.52);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+}
+
+.pick-feed__text h2 {
+    padding-top: 41px;
+    font-size: 4.8rem;
+    line-height: 120%;
+    text-align: center;
+    color: #FE9013;
+}
+
+.pick-feed__text .subtitle {
+    font-size: 24px;
+    line-height: 120%;
+    color: #333B41;
+}
+
+.pick-feed__text p {
+    padding-left: 99px;
+}
+
+.pick-feed__text h3 {
+    padding-left: 475px;
+}
+
+.step__card {
+    width: 168px;
+    height: 168px;
+    background: #fff;
+}
+
+.layout-5-column {
+    display: flex;
+}
+
+.step__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step__arrow {
+    width: 130px;
+    height: 168px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step p {
+    padding: 30px 0;
+    width: 168px;
+}
+
+.button_feed {
+    margin-top: 30px;
+    margin-bottom: 59px;
 }

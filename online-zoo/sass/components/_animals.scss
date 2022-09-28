@@ -1,0 +1,119 @@
+.animals-card {
+    display: grid;
+    grid-template-areas: "buttonL animals1 buttonR"
+                         "buttonL space buttonR"
+                         "buttonL animals2 buttonR";
+    grid-template-rows: 426px 20px 426px;
+    grid-template-columns: 102px 1160px 102px;
+    justify-items: center;
+    align-items: center;
+}
+
+.wrapper-animals {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.animals-row {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 1160px;
+}
+
+.button_circle {
+    width: 62px;
+    height: 62px;
+    border-radius: 30px;
+    background-image: $color-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.button-left {
+    grid-column-start: buttonL;
+    grid-column-end:   buttonL;
+    grid-row-start: buttonL;
+    grid-row-end:   buttonL;
+}
+
+.button-right {
+    grid-column-start: buttonR;
+    grid-column-end:   buttonR;
+    grid-row-start: buttonR;
+    grid-row-end:   buttonR;
+}
+
+.animals-row__card {
+    height: 424px;
+    width: 364px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.animals-row__card-border-wrap {
+    height: 426px;
+    width: 366px;
+    background-image: $color-primary;
+    padding: 2px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animals-row__card__img {
+    height: 366px;
+    width: 364px;
+    border-radius: 5px;
+}
+
+.animals-row__text {
+    padding-left: 16px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+}
+
+.animals-row__name {
+    margin: 0;
+    width: 294px;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.animals-row__ico {
+    width: 33px;
+    height: 37px;
+    padding-right: 13px;
+    padding-top: 5px;
+}
+
+.animals-row__describe {
+    display: flex;
+    margin: auto;;
+}
+
+.animals-row__native {
+    margin: 0;
+    width: fit-content;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 120%;
+    color: #000000;
+}
+
+.button-choose {
+    margin-top: 80px;
+}

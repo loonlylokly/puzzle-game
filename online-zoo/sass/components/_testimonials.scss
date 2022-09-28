@@ -1,0 +1,31 @@
+.layout-3-rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-4-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.testimonials__card-border-wrap {
+    background-image: $gradient-pink;
+    padding: 2px;
+    border-radius: 20px;
+}
+
+.testimonials__card {
+    width: 268px;
+    height: 391px;
+    padding: 1rem;
+    background: #F1F3F2;
+    border-radius: 20px;
+}
+
+.button_round_square {
+    width: 298px;
+    height: 54px;
+    background-image: $color-primary;
+    border-radius: 5px;
+}
