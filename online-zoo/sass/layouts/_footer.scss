@@ -76,6 +76,10 @@
     color: #FFFFFF;
 }
 
+.footer__navbar-menu__link a:hover {
+    color: $color-primary-hover;
+}
+
 .footer__subscribe {
     padding-left: 495px;
     color: #FFF;
@@ -95,7 +99,7 @@
     margin: 14px 0;
 }
 
-.footer__subscribe-wrap-wrap {
+.footer__form {
     display: flex;
 }
 
@@ -150,17 +154,23 @@
     color: #FFFFFF;
 }
 
+.footer__button:hover {
+    background: $color-primary-hover;
+}
+
 .footer__social ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
 }
 
-.footer__social ul li {
+.footer__social ul li a {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: #fff;
 }
 
-.footer__social ul li span {
+.footer__social ul li a span {
     padding-right: 12px;
 }

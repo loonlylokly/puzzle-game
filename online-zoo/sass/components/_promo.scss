@@ -23,12 +23,16 @@
     z-index: 2;
 }
 
+.promo__text-yellow {
+    color: $color-selection;
+}
+
 .circle-orange {
     width: 465px;
     height: 465px;
     margin-top: -472px;
     margin-left: -80px;
-    background-color: $color-primary;
+    background: $color-primary;
     border-radius: 300px;
 }
 
@@ -46,7 +50,16 @@
     background-image: $color-primary;
 }
 
+.button_rounded:hover {
+    background: $color-primary-hover;
+}
+
+.button_rounded:active {
+    background: $color-additional;
+}
+
 .button_watch {
     margin-top: 60px;
     margin-left: 99px;
 }
+

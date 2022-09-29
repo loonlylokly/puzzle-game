@@ -11,31 +11,35 @@
 
     <header class="header">
         <div class="wrapper header__wrapper">
-            <a href="/loonlylokly-JSFE2022Q3/online-zoo/pages/main/" class="navbar-logo">
-            <img src="../../assets/images/logo.png" alt="logo">
-            </a>
             <nav class="header__navigation">
+                <a href="../main/index.html" class="navbar-logo">
+                    <img src="../../assets/images/logo.png" alt="logo">
+                </a>
                 <ul class="navbar-menu">
-                    <li class="navbar-menu__link"><a href="#About">About</a></li>
+                    <li class="navbar-menu__link"><a href="../main/index.html">About</a></li>
                     <li class="navbar-menu__link"><a href="#Map">Map</a></li>
                     <li class="navbar-menu__link"><a href="#Zoos">Zoos</a></li>
+                    <li class="navbar-menu__link"><a href="../donate/index.html">Donate</a></li>
                     <li class="navbar-menu__link"><a href="#Contact us">Contact us</a></li>
-                    <li class="navbar-menu__link"><a href="#Designed by">Designed by &copy;</a></li>
                 </ul>
             </nav>
+            <a class="header__designed" href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online" target="_blank">Designed by &copy;</a>
         </div>
     </header>
 
     <main>
+        <h1>PetStory online</h1>
         <section class="promo">
             <div class="wrapper">
                 <div class="promo__content">
-                    <p class="promo__text">Watch<br>your<br>favorite<br>animal<br>online</p><div class="circle-orange"></div>
+                    <p class="promo__text">Watch<br>your<br><span class="promo__text-yellow">favorite</span><br>animal<br>online</p><div class="circle-orange"></div>
                     <button class="button button_rounded button_watch">Watch online</button>
                 </div>
             </div>
         </section>
 
+        
+        <span class="backstage__flower"><img src="../../assets/images/flower1.png" alt="flower1"></span>
         <section class="backstage">
             <div class="wrapper">
                 <div class="layout-2-column">
@@ -133,8 +137,10 @@
                     </div>
                     <div class="button-right button_circle"><p>&rarr;</p></div>
                 </div>
-                <button class="button button_rounded button-choose">Choose your favorite</button>
+                <button class="button button_rounded button-choose" onclick="window.location.href = '../main/index.html#map';">Choose your favorite</button>
             </div>
+            <span class="animals__palm"><img src="../../assets/images/palm.png" alt="palm"></span>
+            <span class="animals__flower"><img src="../../assets/images/flower2.png" alt="flower2"></span>
         </section>
 
         <section class="pick-feed">
@@ -143,8 +149,8 @@
                     <div class="pick-feed__text">
                         <h2>Pick and feed a friend</h2>
                         <p class="subtitle">We know the animals bring you joy, and in these extraordinary times, we’re glad.</p>
-                        <p>During a time when the COVID-19 epidemic is touching all of our lives, we’re proud and glad that people around the world find joy in PatStory.</p>
-                        <p>Even though the zoo has reopened, we need you now more than ever to help us deal with these problems. Please consider a gift to our Emergency Support Fund.</p>
+                        <p class="subtext">During a time when the COVID-19 epidemic is touching all of our lives, we’re proud and glad that people around the world find joy in PatStory.</p>
+                        <p>Even though the zoo has reopened, we need you now more than ever to help us deal with these problems. Please consider a gift to our <a class="pick-feed__link" href="../donate/index.html">Emergency Support Fund.</a></p>
                         <h3>How it works</h3>
                     </div>
                     <div class="layout-5-column">
@@ -228,25 +234,26 @@
                     <button class="button_round_square">Leave Feedback</button>
                 </div>
             </div>
+            <span class="footer__leav"><img src="../../assets/images/leav.png" alt="leav"></span>
         </section>
     </main>
 
     <footer class="footer">
         <div class="wrapper">
             <div class="layout-3-rows-3-columns">
-                    <span class="footer__logo"><img src="../../assets/images/logo.png" alt="logo"></span>
-                    <button class="footer__button button_round_square">donate for volunteers</button>
+                    <a class="footer__logo" href="../main/index.html"><img src="../../assets/images/logo.png" alt="logo"></a>
+                    <button class="footer__button button_round_square" onclick="window.location.href = '../donate/index.html';">donate for volunteers</button>
                     <div class="footer__social">
                         <ul>
-                            <li><span><img src="../../assets/icons/facebook.svg" alt="facebook"></span>Facebook</li>
-                            <li><span><img src="../../assets/icons/twitter.svg" alt="twitter"></span>Twitter</li>
-                            <li><span><img src="../../assets/icons/instagram.svg" alt="instagram"></span>Instagram</li>
-                            <li><span><img src="../../assets/icons/youtube.svg" alt="youtube"></span>YouTube</li>
+                            <li><a href="https://facebook.com" target="_blank"><span><img src="../../assets/icons/facebook.svg" alt="facebook"></span>Facebook</a></li>
+                            <li><a href="https://twitter.com" target="_blank"><span><img src="../../assets/icons/twitter.svg" alt="twitter"></span>Twitter</a></li>
+                            <li><a href="https://instagram.com" target="_blank"><span><img src="../../assets/icons/instagram.svg" alt="instagram"></span>Instagram</a></li>
+                            <li><a href="https://youtube.com" target="_blank"><span><img src="../../assets/icons/youtube.svg" alt="youtube"></span>YouTube</a></li>
                         </ul>
                     </div>
                     <div class="footer__nav">
                         <ul class="footer__navbar-menu">
-                            <li class="footer__navbar-menu__link"><a href="#About">About</a></li>
+                            <li class="footer__navbar-menu__link"><a href="../main/index.html">About</a></li>
                             <li class="footer__navbar-menu__link"><a href="#Map">Map</a></li>
                             <li class="footer__navbar-menu__link"><a href="#Zoos">Zoos</a></li>
                             <li class="footer__navbar-menu__link"><a href="#Contact us">Contact us</a></li>
@@ -255,10 +262,10 @@
                     <div class="footer__subscribe">
                         <div class="footer__subscribe-wrap">
                             <p class="footer__subtitle">Subscribe to our news</p>
-                            <div class="footer__subscribe-wrap-wrap">
-                                <input class="footer__input" type="text" placeholder="  Enter your email">
+                            <form class="footer__form">
+                                <input class="footer__input" type="email" required placeholder="  Enter your email">
                                 <button class="footer__submit">Submit</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <div class="footer__designe">

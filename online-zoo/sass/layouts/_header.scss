@@ -11,7 +11,16 @@
 .header__wrapper {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
+}
+
+.header__navigation {
+    display: flex;
+}
+
+.header__designed {
+    color: #fff;
+    text-decoration: none;
 }
 
 .navbar-logo {
@@ -36,4 +45,8 @@
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 140%;
+}
+
+.navbar-menu__link a:hover {
+    color: $color-primary-hover;
 }

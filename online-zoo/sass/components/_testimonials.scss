@@ -129,3 +129,11 @@
     border: 0;
     color: #fff;
 }
+
+.button_round_square:hover {
+    background: $color-primary-hover;
+}
+
+.button_round_square:active {
+    background: $color-additional;
+}

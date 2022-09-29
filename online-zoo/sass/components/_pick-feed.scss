@@ -32,10 +32,19 @@
 
 .pick-feed__text p {
     padding-left: 99px;
+    color: #333B41;
+}
+
+.subtext {
+    font-weight: 500;
 }
 
 .pick-feed__text h3 {
     padding-left: 475px;
+    color: #333B41;
+    font-weight: 400;
+    font-size: 3.6rem;
+    line-height: 130%;
 }
 
 .step__card {
@@ -70,4 +79,16 @@
 .button_feed {
     margin-top: 30px;
     margin-bottom: 59px;
+}
+
+.pick-feed__link {
+    color: #333B41;
+    border-bottom: 3px solid $color-primary-hover;
+}
+
+.footer__leav {
+    position: absolute;
+    right: 0;
+    top: 4280px;
+    z-index: -1;
 }

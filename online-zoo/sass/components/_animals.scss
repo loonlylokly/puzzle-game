@@ -29,13 +29,21 @@
     width: 62px;
     height: 62px;
     border-radius: 30px;
-    background-image: $color-primary;
+    background: $color-primary;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 300;
     font-size: 1.5rem;
     color: #fff;
+}
+
+.button_circle:hover{
+    background: $color-primary-hover;
+}
+
+.button_circle:active{
+    background: $color-additional;
 }
 
 .button-left {
@@ -116,4 +124,16 @@
 
 .button-choose {
     margin-top: 80px;
+}
+
+.animals__palm {
+    position: absolute;
+    left: 0;
+    top: 2158px;
+}
+
+.animals__flower {
+    position: absolute;
+    right: 0;
+    top: 2345px;
 }
