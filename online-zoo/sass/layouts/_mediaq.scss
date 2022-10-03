@@ -1,0 +1,15 @@
+@media (max-width: 1500px){
+    .backstage__flower {
+        display: none;
+    }
+}
+
+@media (max-width: 1362px) {
+    .animals-card {
+        display: flex;
+        // grid-template-areas: "animals1 animals1 animals1 animals1"
+        //                      "space buttonL buttonR space"
+        //                      "animals2 animals2 animals2 animals2";
+        // grid-template-columns: 0px 630px 630px 0px;
+    }
+}

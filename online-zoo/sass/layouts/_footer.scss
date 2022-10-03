@@ -7,20 +7,22 @@
     grid-template-areas: "logo subscribe subscribe"
                          "button subscribe subscribe"
                          "social navigation designed";
-    grid-template-rows: 85px 122px 228px;
-    grid-template-columns: 298px 495px 367px;
+    grid-template-rows: 1fr 86px 180px;
+    grid-template-columns: 1.8fr 30.9375vw 2.2fr;
     align-items: flex-end;
     justify-content: center;
-    padding-top: 31px;
+    padding-top: 30px;
     margin: 0;
     padding-bottom: 50px;
 }
 
 .footer__logo {
+    height: 100%;
     grid-column-start: logo;
     grid-column-end:   logo;
     grid-row-start: logo;
     grid-row-end:   logo;
+    padding-top: 10px;
 }
 
 .footer__submit {
@@ -58,14 +60,21 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    padding-left: 72px;
+    padding-left: 3vw;
 }
 
 .footer__navbar-menu__link {
     list-style: none;
-    padding: 0 29px;
+    padding: 0 1.875vw;
 }
 
+.footer__navbar-menu__link:last-of-type {
+    padding: 0 0 0 1.875vw;
+}
+
+.navbar-menu__link:first-of-type {
+    padding: 0 1.875vw 0 0;
+}
 .footer__navbar-menu__link a {
     text-decoration: none;
     color: #fff;
@@ -81,7 +90,8 @@
 }
 
 .footer__subscribe {
-    padding-left: 495px;
+    display: flex;
+    justify-content: flex-end;
     color: #FFF;
     grid-column-start: subscribe;
     grid-column-end:   subscribe;

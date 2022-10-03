@@ -13,11 +13,14 @@
     align-items: center;
     background: rgba(253, 253, 255, 0.52);
     backdrop-filter: blur(2px);
-    border-radius: 20px;
+    border-radius: 20px; 
+    margin: 0 30px;
 }
 
 .pick-feed__text h2 {
-    padding-top: 41px;
+    margin: 0;
+    font-weight: 400;
+    padding-top: 38px;
     font-size: 4.8rem;
     line-height: 120%;
     text-align: center;
@@ -25,12 +28,17 @@
 }
 
 .pick-feed__text .subtitle {
+    margin: 0;
+    padding-top: 34px;
+    padding-bottom: 24px;
     font-size: 24px;
     line-height: 120%;
     color: #333B41;
 }
 
 .pick-feed__text p {
+    margin: 0;
+    padding-top: 12px;
     padding-left: 99px;
     color: #333B41;
 }
@@ -40,6 +48,7 @@
 }
 
 .pick-feed__text h3 {
+    padding-top: 20px;
     padding-left: 475px;
     color: #333B41;
     font-weight: 400;
@@ -72,7 +81,7 @@
 }
 
 .step p {
-    padding: 30px 0;
+    padding: 15px 0 18px 0;
     width: 168px;
 }
 

@@ -1,17 +1,11 @@
 .header {
     position: fixed;
     top: 0;
-    padding: 14px 0;
-    width: 100%;
+    padding: 11px 0;
+    width: 100vw;
     background: #000;
     backdrop-filter: blur(2px);
     z-index: 1000;
-}
-
-.header__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .header__navigation {
@@ -31,11 +25,17 @@
     display: flex;
     align-items: center;
     list-style-type: none;
+    padding: 0 0 0 63px;
+    margin: 0;
 }
 
 .navbar-menu__link {
     list-style: none;
-    padding: 0 29px;
+    padding: 0 1.875vw;
+}
+
+.navbar-menu__link:first-of-type {
+    padding: 0 1.875vw 0 0;
 }
 
 .navbar-menu__link a {

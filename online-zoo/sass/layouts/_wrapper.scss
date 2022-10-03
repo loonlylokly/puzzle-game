@@ -1,4 +1,11 @@
 .wrapper {
-    max-width: $content-width;
+    max-width: 1220px;
     margin: auto;
+    padding: 0 30px;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
