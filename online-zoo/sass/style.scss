@@ -3,7 +3,6 @@
 @import "layouts/wrapper";
 @import "layouts/header";
 @import "layouts/footer";
-@import "layouts/mediaq";
 
 // Components
 @import "components/promo";
@@ -11,3 +10,5 @@
 @import "components/animals";
 @import "components/pick-feed";
 @import "components/testimonials";
+
+@import "layouts/mediaq";
