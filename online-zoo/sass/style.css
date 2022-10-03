@@ -494,7 +494,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 94px;
+  padding-bottom: 102px;
 }
 
 .button_circle {
@@ -560,7 +560,6 @@ p {
 
 .animals-row__name {
   margin: 0;
-  width: 17vw;
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 140%;
@@ -571,13 +570,14 @@ p {
 .animals-row__ico {
   width: 33px;
   height: 37px;
-  padding-right: 13px;
+  padding-right: 50px;
   padding-top: 5px;
 }
 
 .animals-row__describe {
   display: flex;
   margin: auto;
+  justify-content: space-between;
 }
 
 .animals-row__native {
@@ -656,8 +656,7 @@ p {
 }
 
 .pick-feed__text h3 {
-  padding-top: 20px;
-  padding-left: 475px;
+  padding: 56px 0 40px 475px;
   color: #333B41;
   font-weight: 400;
   font-size: 3.6rem;
@@ -694,7 +693,7 @@ p {
 }
 
 .button_feed {
-  margin-top: 30px;
+  margin-top: 26px;
   margin-bottom: 59px;
 }
 
@@ -713,7 +712,7 @@ p {
 .layout-4-rows {
   display: flex;
   flex-direction: column;
-  padding-top: 102px;
+  padding-top: 136px;
   padding-bottom: 180px;
 }
 
@@ -721,7 +720,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 12px;
+  padding-top: 48px;
   padding-bottom: 24px;
 }
 
@@ -741,7 +740,7 @@ p {
 }
 
 .testimonials__card {
-  padding: 1rem;
+  padding: 1vw;
   padding-top: 15px;
   background: #F1F3F2;
   border-radius: 20px;
