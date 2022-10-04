@@ -18,7 +18,7 @@
 }
 
 .navbar-logo {
-
+    height: 52px;
 }
 
 .navbar-menu {
@@ -49,4 +49,41 @@
 
 .navbar-menu__link a:hover {
     color: $color-primary-hover;
+}
+
+.header__burger-menu {
+    display: none;
+}
+
+@media (max-width: 960px) {
+    .navbar-menu {
+        display: none;
+    }
+
+    .header__designed {
+        display: none;
+    }
+
+    .header {
+        padding: 0;
+    }
+
+    .navbar-logo-img {
+        display: none;
+    }
+
+    .navbar-logo {
+        width: 46.93px;
+        height: 29.03px;
+        background: url(../assets/images/small_logo.png) no-repeat;
+        background-size: cover;
+    }
+
+    .header__burger-menu {
+        display: inline-block;
+        width: 18px;
+        height: 10px;
+        background: url(../assets/images/burger_menu.png) no-repeat;
+        background-size: cover;
+    }
 }

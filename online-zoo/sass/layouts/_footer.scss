@@ -184,3 +184,23 @@
 .footer__social ul li a span {
     padding-right: 12px;
 }
+
+
+@media (max-width: 1000px) {
+    .footer__navbar-menu {
+        padding-left: 0vw;
+    }
+
+    .footer__navbar-menu__link:first-of-type {
+        padding: 0 1.875vw 0 0;
+    }
+
+    .layout-3-rows-3-columns {
+        grid-template-rows: 1fr 86px 180px;
+        grid-template-columns: 1.8fr 36vw 1.9fr;
+    }
+
+    .footer__subscribe {
+        padding-right: 35px;
+    }
+}

@@ -58,8 +58,55 @@
     background: $color-additional;
 }
 
-.button_watch {
+.promo__content .button_watch {
     margin-top: 69px;
     margin-left: 94px;
 }
 
+
+@media (max-width: 1000px) {
+    .promo__content {
+        padding: 12.28vw 6vw 4.7vw 0;
+    }
+    
+    .promo__text {
+        font-size: 8.5rem;
+        line-height: 75%;
+    }
+    
+    .circle-orange {
+        width: 367px;
+        height: 367px;
+        margin-top: -372px;
+        margin-left: -72px;
+    }
+    
+    .button_watch {
+        margin-top: 46px;
+        margin-left: 37px;
+    }
+}
+
+@media (max-width: 960px) {
+    .promo__content {
+        padding: 75px 0 113px 0;
+    }
+    
+    .promo__text {
+        font-size: 5.4rem;
+        line-height: 75%;
+    }
+    
+    .circle-orange {
+        width: 237px;
+        height: 237px;
+        margin-top: -244px;
+        margin-left: -32px;
+    }
+    
+    .promo__content .button_watch {
+        display: none;
+        margin-top: 46px;
+        margin-left: 37px;
+    }
+}

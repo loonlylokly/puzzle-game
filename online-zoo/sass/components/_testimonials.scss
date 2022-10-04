@@ -139,3 +139,40 @@
 .button_round_square:active {
     background: $color-additional;
 }
+
+
+@media (max-width: 1160px) {
+    .testimonials__card-border-wrap {
+        width: 294px;
+    }
+    
+    .testimonials__card-border-wrap:last-of-type {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .layout-4-rows {
+        padding-top: 100px;
+        padding-bottom: 140px;
+    }
+
+    .layout-4-column {
+        padding-top: 30px;
+        padding-bottom: 0px;
+    }
+
+    .testimonials__slider-border {
+        width: 390px;
+        height: 8px;
+        margin: 20px 0 51px 268px;
+    }
+
+    .testimonials__slider {
+        width: 390px;
+    }
+
+    .testimonials__slide {
+        width: 75px;
+    }
+}

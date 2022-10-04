@@ -9,3 +9,15 @@
     align-items: center;
     justify-content: space-between;
 }
+
+@media (max-width: 1000px) {
+    .wrapper {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 960px) {
+    .wrapper {
+        max-width: 660px;
+    }
+}
