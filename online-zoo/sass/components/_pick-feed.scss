@@ -48,11 +48,12 @@
 }
 
 .pick-feed__text h3 {
-    padding: 56px 0 40px 475px;
+    padding: 56px 0 40px;
     color: #333B41;
     font-weight: 400;
     font-size: 3.6rem;
     line-height: 130%;
+    text-align: center;
 }
 
 .step__card {
@@ -69,6 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 14px;
 }
 
 .step__arrow {
@@ -80,12 +82,12 @@
 }
 
 .step p {
-    padding: 15px 0 18px 0;
+    padding: 15px 0 18px;
     width: 168px;
 }
 
 .button_feed {
-    margin-top: 26px;
+    margin-top: 44px;
     margin-bottom: 59px;
 }
 
@@ -122,14 +124,59 @@
     }
     
     .pick-feed__text h3 {
-        padding-top: 38px;
-        padding-left: 366px;
-        padding-bottom: 40px;
+        padding: 38px 0 40px;
         margin: 0;
     }
 
     .button_feed {
-        margin-top: 37px;
-        margin-bottom: 49px;
+        margin: 58px 0 49px;
+    }
+
+    .step__arrow {
+        width: 130px;
+        height: 0;
+    }
+
+    .wrapper-pick-feed {
+        margin: 0 30px;
+    }
+}
+
+@media (max-width: 960px) {
+    .pick-feed .wrapper {
+        padding: 20px 0 20px 0;
+    }
+
+    .pick-feed__text h2 {
+        padding-top: 10px;
+        font-size: 4.2rem;
+    }
+
+    .pick-feed__text p {
+        padding-left: 18px;
+    }
+
+    .pick-feed__text .subtitle {
+        padding-top: 18px;
+        padding-bottom: 9px;
+        font-size: 2.2rem;
+    }
+
+    .pick-feed__text h3 {
+        padding: 26px 0 20px;
+        margin: 0;
+    }
+
+    .step__card {
+        width: 168px;
+    }
+
+    .button_feed {
+        margin-top: 24px;
+        margin-bottom: 59px;
+    }
+
+    .step__arrow {
+        width: 42px;
     }
 }

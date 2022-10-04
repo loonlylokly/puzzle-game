@@ -255,3 +255,41 @@
         height: 29.1vw;
     }
 }
+
+@media (max-width: 960px) {
+    .wrapper-animals {
+        padding-bottom: 100px;
+    }
+
+    .animals-row__card-border-wrap:nth-of-type(3){
+        display: none;
+    }
+
+    .animals-row__card-border-wrap:nth-of-type(2){
+        margin: 0;
+    }
+
+    .animals-card {
+        grid-template-rows: 51.875vw 92px 51.875vw;
+        grid-template-columns: 0px 44.5vw 4.68vw 44.5vw 0px;
+    }
+
+    .animals-row__card-border-wrap {
+        height: 51.875vw;
+        width: 44.5vw;
+    }
+
+    .animals-row__card {
+        height: 99.9%;
+        width: 99.9%
+    }
+
+    .animals-row__card__img {
+        height: 44.2vw
+    }
+
+    
+    .button-choose {
+        margin-top: 65px;
+    }
+}

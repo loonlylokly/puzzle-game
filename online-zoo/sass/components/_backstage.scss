@@ -96,4 +96,21 @@
         width: 125px;
         height: 476px;
     }
+
+    .backstage__text {
+        margin: 0;
+    }
+
+    .backstage__text-h2 {
+        padding-bottom: 22px;
+    }
+
+    .backstage__text-p:first-of-type {
+        margin: 0;
+        padding-bottom: 30px;
+    }
+
+    .backstage__text-h3 {
+        padding-bottom: 20px;
+    }
 }

@@ -1,7 +1,7 @@
 .header {
     position: fixed;
     top: 0;
-    padding: 11px 0;
+    padding: 14px 0;
     width: 100vw;
     background: #000;
     backdrop-filter: blur(2px);
@@ -55,6 +55,12 @@
     display: none;
 }
 
+@media (max-width: 1000px) {
+    .navbar-menu__link {
+        padding: 0 2.4vw;
+    }
+}
+
 @media (max-width: 960px) {
     .navbar-menu {
         display: none;
@@ -65,7 +71,7 @@
     }
 
     .header {
-        padding: 0;
+        padding: 2px;
     }
 
     .navbar-logo-img {
