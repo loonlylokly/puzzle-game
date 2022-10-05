@@ -38,6 +38,7 @@
 
 
 .footer__social {
+    height: 90%;
     font-size: 1.6rem;
     line-height: 140%;
     text-decoration: none;
@@ -46,6 +47,16 @@
     grid-column-end:   social;
     grid-row-start: social;
     grid-row-end:   social;
+}
+
+.footer__social > ul {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 25px 0 0 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 .footer__nav {
@@ -167,12 +178,6 @@
     background: $color-primary-hover;
 }
 
-.footer__social ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-
 .footer__social ul li a {
     display: flex;
     align-items: center;
@@ -229,8 +234,11 @@
         justify-content: flex-end;
     }
 
-    .footer__social ul li{
-        padding: 10px 0 10px 0;
+    .footer__social ul{
+        margin: 0;
+        display: flex;
+        align-content: space-between;
+        // padding: 10px 0 10px 0;
     }
 
     .footer__social ul li a img {
@@ -248,4 +256,65 @@
         padding: 0 3.2vw;
     }
     
+}
+
+@media (max-width: 590px) {
+    .layout-3-rows-3-columns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__logo-link img {
+        display: none;
+    }
+
+    .footer__social {
+        order: 2;
+        width: 75%;
+        padding-top: 22px;
+    }
+
+    .footer__social ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .footer__logo {
+        order: 1;
+        padding-top: 20px;
+    }
+
+    .footer__logo-link {
+        content: url(../assets/images/logo2.png);
+    }
+
+    .footer__donate {
+        order: 3;
+        padding-top: 31px;
+    }
+
+    .footer__designe {
+        order: 4;
+        padding-top: 28px;
+        width: 100%;
+    }
+
+    .footer__nav {
+        order: 5;
+        padding-top: 20px;
+        width: 100%;
+    }
+
+    .footer__navbar-menu {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .footer__designe-wrap > p {
+        padding-bottom: 10px;
+        font-size: 1.5rem;
+    }
 }

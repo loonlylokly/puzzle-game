@@ -1,5 +1,6 @@
 .animals {
     position: relative;
+    overflow: hidden;
 }
 
 .animals-card {
@@ -60,7 +61,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 102px;
+    padding-bottom: 100px;
 }
 
 .button_circle {
@@ -156,7 +157,7 @@
 }
 
 .button-choose {
-    margin-top: 80px;
+    margin-top: 82px;
 }
 
 .animals__palm {
@@ -241,7 +242,7 @@
 
 @media (max-width: 1000px) {
     .wrapper-animals {
-        padding-bottom: 140px;
+        padding-bottom: 138px;
     }
 
     .animals-card {
@@ -289,11 +290,11 @@
 
     .animals-row__card {
         height: 99.9%;
-        width: 99.9%
+        width: 99.9%;
     }
 
     .animals-row__card__img {
-        height: 44.2vw
+        height: 44.2vw;
     }
 
     
@@ -322,7 +323,51 @@
     .animals__flower {
         width: 117px;
         height: 76px;
-        right: 0;
-        bottom: 0;
+        right: -32px;
+        bottom: -6px;
+    }
+}
+
+@media (max-width: 590px) {
+    .animals-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button-left {
+        display: none;
+    }
+
+    .button-right {
+        display: none;
+    }
+
+    .animals-row1 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .animals-row2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .animals-row__card-border-wrap {
+        height: 103.75vw;
+        width: 89.0625vw;
+        margin: 0 15px 20px 0;
+    }
+
+    .animals-row__card__img {
+        height: 89.0625vw;
+    }
+
+    .button-choose {
+        margin-top: 20px;
+    }
+
+    .wrapper-animals {
+        padding-bottom: 60px;
     }
 }

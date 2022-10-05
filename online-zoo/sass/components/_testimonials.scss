@@ -1,5 +1,6 @@
 .testimonials {
     position: relative;
+    overflow: hidden;
 }
 
 .layout-4-rows {
@@ -239,5 +240,33 @@
 @media (max-width: 640px) {
     .testimonials__card-border-wrap {
         width: 93.75vw;
+    }
+}
+
+@media (max-width: 590px) {
+    .testimonials__card-border-wrap {
+        width: 299px;
+    }
+
+    .testimonials-h3 {
+        font-size: 2.4rem;
+    }
+
+    .layout-4-rows {
+        padding-top: 30px;
+        padding-bottom: 59px;
+    }
+
+    .layout-4-column {
+        padding-top: 15px;
+        margin-bottom: 18px;
+    }
+
+    .testimonials__leaf {
+        width: 71px;
+        height: 110px;
+        bottom: -46px;
+        right: -14px;
+        transform: rotate(-19deg);
     }
 }

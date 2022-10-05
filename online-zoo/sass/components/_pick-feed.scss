@@ -27,19 +27,19 @@
     color: #FE9013;
 }
 
-.pick-feed__text .subtitle {
-    margin: 0;
-    padding-top: 34px;
-    padding-bottom: 24px;
-    font-size: 24px;
-    line-height: 120%;
-    color: #333B41;
-}
-
-.pick-feed__text p {
+.pick-feed__text > p {
     margin: 0;
     padding-top: 12px;
     padding-left: 99px;
+    color: #333B41;
+}
+
+p.subtitle {
+    margin: 0;
+    padding-top: 32px;
+    padding-bottom: 26px;
+    font-size: 24px;
+    line-height: 120%;
     color: #333B41;
 }
 
@@ -47,7 +47,7 @@
     font-weight: 500;
 }
 
-.pick-feed__text h3 {
+.pick-feed__text > h3 {
     padding: 56px 0 40px;
     color: #333B41;
     font-weight: 400;
@@ -87,7 +87,7 @@
     content: url(../assets/images/arrow.png);
 }
 
-.step p {
+.step__card-text {
     padding: 15px 0 18px;
     width: 168px;
 }
@@ -111,25 +111,25 @@
 
 
 @media (max-width: 1000px) {
-    .pick-feed .wrapper {
+    .pick-feed > .wrapper {
         padding: 32px 0 50px 0;
     }
 
-    .pick-feed__text h2 {
-        padding-top: 30px;
+    .pick-feed__text > h2 {
+        padding-top: 28px;
     }
-    
-    .pick-feed__text .subtitle {
+
+    .pick-feed__text > p {
+        padding-top: 10px;
+        padding-left: 49px;
+    }
+
+    p.subtitle {
         padding-top: 22px;
         padding-bottom: 4px;
     }
     
-    .pick-feed__text p {
-        padding-top: 10px;
-        padding-left: 49px;
-    }
-    
-    .pick-feed__text h3 {
+    .pick-feed__text > h3 {
         padding: 38px 0 40px;
         margin: 0;
     }
@@ -152,22 +152,22 @@
         padding: 20px 0 20px 0;
     }
 
-    .pick-feed__text h2 {
+    .pick-feed__text > h2 {
         padding-top: 10px;
         font-size: 4.2rem;
     }
 
-    .pick-feed__text p {
+    .pick-feed__text > p {
         padding-left: 18px;
     }
 
-    .pick-feed__text .subtitle {
+    p.subtitle {
         padding-top: 18px;
         padding-bottom: 9px;
         font-size: 2.2rem;
     }
 
-    .pick-feed__text h3 {
+    .pick-feed__text > h3 {
         padding: 26px 0 20px;
         margin: 0;
     }
@@ -192,5 +192,62 @@
         margin-top: -5px;
         z-index: 2;
         content: url(../assets/images/arrow2.png);
+    }
+}
+
+@media (max-width: 590px) {
+    .wrapper-pick-feed {
+        margin: 0 10px;
+    }
+
+    .layout-5-column {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .step__card {
+        width: 168px;
+        margin: 0;
+    }
+
+    .step__arrow {
+        transform: rotate(90deg);
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .step__arrow-img {
+        margin: -80px 10px 0 0;
+    }
+
+    .pick-feed__text > h2 {
+        padding-top: 20px;
+        font-size: 2.4rem;
+    }
+
+    .pick-feed__text > p {
+        display: none;
+    }
+
+    p.subtitle {
+        display: block;
+        padding: 10px 0 0 0;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .pick-feed__text > h3 {
+        padding: 20px 0 20px;
+        margin: 0;
+        font-size: 2.4rem;
+    }
+    .step__card-text {
+        padding: 10px 0 36px 0;
+        width: 168px;
+    }
+    
+    .button_feed {
+        margin-top: 0;
+        margin-bottom: 38px;
     }
 }

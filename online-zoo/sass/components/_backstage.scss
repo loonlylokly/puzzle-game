@@ -1,5 +1,7 @@
 .backstage {
-    padding: 8.75vw 0 11.25vw 0;
+    position: relative;
+    padding: 8.75vw 0 11.3vw 0;
+    overflow: hidden;
 }
 
 .layout-2-column {
@@ -11,37 +13,37 @@
     margin-left: 5.4375vw;
 }
 
-.backstage__text-h2 {
+#backstage__text-h2 {
     margin: 0;
-    padding-bottom: 24px;
+    padding-bottom: 20px;
     font-weight: 400;
     font-size: 4.8rem;
     line-height: 120%;
 }
 
-.backstage__text-p:first-of-type {
-    margin: 0;
-    padding-bottom: 54px;
-}
-
-.backstage__text-p {
+#backstage__text-p2 {
+    height: 105px;
     margin: 0;
     font-weight: 400;
     font-size: 1.6rem;
-    line-height: 130%;
+    line-height: 135%;
 }
 
-.backstage__text-h3 {
+#backstage__text-p1 {
     margin: 0;
-    padding-bottom: 34px;
+    height: 97px;
+    padding-bottom: 54px;
     font-weight: 400;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     line-height: 120%;
 }
 
-.backstage__flower {
-    position: absolute;
-    right: 0;
+#backstage__text-h3 {
+    margin: 0;
+    padding-bottom: 32px;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 120%;
 }
 
 .bamboo-cap {
@@ -52,9 +54,19 @@
     display: none;
 }
 
+.backstage__flower {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
 .backstage__flower-img {
     width: 100%;
     height: 100%;
+}
+
+.button_watch-backstage {
+    display: none;
 }
 
 
@@ -66,11 +78,11 @@
 
 @media (max-width: 1000px) {
     .backstage {
-        padding: 10vw 0 16.5vw 0;
+        padding: 10vw 0 16.8vw 0;
     }
     
     .backstage__text {
-        margin-left: 3.1vw;
+        margin-left: 3.5vw;
     }
     
     .bamboo-cap {
@@ -92,25 +104,71 @@
     }
 
     .backstage__flower {
-        display: inline-block;
-        width: 125px;
-        height: 476px;
+        display: initial;
+        width: 159px;
+        height: 484px;
+        
+        right: -28px;
     }
 
     .backstage__text {
         margin: 0;
     }
 
-    .backstage__text-h2 {
+    #backstage__text-h2 {
         padding-bottom: 22px;
     }
 
-    .backstage__text-p:first-of-type {
+    #backstage__text-p1 {
+        
+        height: fit-content;
         margin: 0;
         padding-bottom: 30px;
     }
 
-    .backstage__text-h3 {
+    #backstage__text-h3 {
         padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 590px) {
+    .backstage {
+        padding: 20px 0 37px 0;
+    }
+
+    .button_watch-backstage {
+        display: initial;
+    }
+
+    .backstage__flower {
+        width: 32px;
+        height: 218px;
+        overflow: hidden;
+    }
+
+    .backstage__flower-img {
+        width: 68px;
+        height: 218px;
+        margin: 38px -100px 0 0;
+    }
+
+    #backstage__text-h2 {
+        padding: 30px 0 10px 0;
+        font-size: 2.4rem;
+    }
+
+    #backstage__text-p1 {
+        margin: 0;
+        padding-bottom: 20px;
+        line-height: 130%;
+    }
+
+    #backstage__text-p2 {
+        height: fit-content;
+        line-height: 140%;
+    }
+
+    #backstage__text-h3 {
+        padding-bottom: 9px;
     }
 }
