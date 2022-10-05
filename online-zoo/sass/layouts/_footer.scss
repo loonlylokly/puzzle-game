@@ -180,7 +180,7 @@
     color: #fff;
 }
 
-.footer__social ul li a span {
+.footer__social ul li a img {
     padding-right: 12px;
 }
 
@@ -202,4 +202,50 @@
     .footer__subscribe {
         padding-right: 35px;
     }
+}
+
+@media (max-width: 960px) {
+    .layout-3-rows-3-columns {
+        display: grid;
+        grid-template-areas: "logo social"
+                             "button social"
+                             "navigation designed";
+        grid-template-rows: 65px 120px 86px;
+        grid-template-columns: 46.5625vw 35.9375vw;
+        column-gap: 73px;
+        padding: 0px 0 10px;
+    }
+
+    .footer__subscribe {
+        display: none;
+    }
+
+    .footer__social ul li p {
+        display: none;
+    }
+
+    .footer__social {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .footer__social ul li{
+        padding: 10px 0 10px 0;
+    }
+
+    .footer__social ul li a img {
+        padding-right: 0;
+    }
+
+    .footer__donate {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer__navbar-menu__link {
+        list-style: none;
+        padding: 0 3.2vw;
+    }
+    
 }

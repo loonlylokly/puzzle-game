@@ -1,3 +1,7 @@
+.testimonials {
+    position: relative;
+}
+
 .layout-4-rows {
     display: flex;
     flex-direction: column;
@@ -123,6 +127,21 @@
     background: $color-additional;
 }
 
+.testimonials__leaf {
+    position: absolute;
+    bottom: -132px;
+    right: 0;
+    z-index: -1;
+}
+
+
+@media (max-width: 1550px){
+    .testimonials__leaf {        
+        width: 198px;
+        height: 327px;
+        bottom: -87px;
+    }
+}
 
 @media (max-width: 1160px) {
     .testimonials__card-border-wrap {
@@ -207,5 +226,18 @@
         width: 100%;
         display: flex;
         justify-content: center;
+    }
+
+    .testimonials__leaf {
+        width: 123px;
+        height: 204px;
+        bottom: -69px;
+        right: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .testimonials__card-border-wrap {
+        width: 93.75vw;
     }
 }

@@ -81,6 +81,12 @@
     justify-content: center;
 }
 
+.step__arrow-img {
+    width: 69px;
+    height: 35px;
+    content: url(../assets/images/arrow.png);
+}
+
 .step p {
     padding: 15px 0 18px;
     width: 168px;
@@ -129,12 +135,7 @@
     }
 
     .button_feed {
-        margin: 58px 0 49px;
-    }
-
-    .step__arrow {
-        width: 130px;
-        height: 0;
+        margin: 54px 0 49px;
     }
 
     .wrapper-pick-feed {
@@ -143,6 +144,10 @@
 }
 
 @media (max-width: 960px) {
+    .wrapper-pick-feed {
+        margin: 0;
+    }
+
     .pick-feed .wrapper {
         padding: 20px 0 20px 0;
     }
@@ -168,7 +173,7 @@
     }
 
     .step__card {
-        width: 168px;
+        width: 25vw;
     }
 
     .button_feed {
@@ -178,5 +183,14 @@
 
     .step__arrow {
         width: 42px;
+        height: 0;
+    }
+
+    .step__arrow-img {
+        width: 89px;
+        height: 29px;
+        margin-top: -5px;
+        z-index: 2;
+        content: url(../assets/images/arrow2.png);
     }
 }

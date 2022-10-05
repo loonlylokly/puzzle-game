@@ -1,3 +1,7 @@
+.animals {
+    position: relative;
+}
+
 .animals-card {
     display: grid;
     grid-template-areas: "buttonL animals1 animals1 animals1 buttonR"
@@ -157,25 +161,29 @@
 
 .animals__palm {
     position: absolute;
-    left: 0;
-    top: 2158px;
-    z-index: -1;
+    bottom: 0px;
+    left: 0px;
+    left: -588px;
 }
 
 .animals__flower {
     position: absolute;
-    right: 0;
-    top: 2345px;
+    bottom: 0px;
+    right: 0px;
 }
 
 
-@media (max-width: 1500px){
+@media (max-width: 1550px){
     .animals__palm {
-        display: none;
+        width: 387px;
+        height: 202px;
+        left: -193px;
     }
     
     .animals__flower {
-        display: none;
+        width: 241px;
+        height: 180px;
+        right: 0;
     }
 }
 
@@ -258,7 +266,7 @@
 
 @media (max-width: 960px) {
     .wrapper-animals {
-        padding-bottom: 100px;
+        padding-bottom: 99px;
     }
 
     .animals-row__card-border-wrap:nth-of-type(3){
@@ -290,6 +298,31 @@
 
     
     .button-choose {
-        margin-top: 65px;
+        margin-top: 60px;
+    }
+
+    .animals__palm {
+        left: -252px;
+    }
+
+    .animals__flower {
+        width: 175px;
+        height: 129px;
+        right: 0px;
+    }
+}
+
+@media (max-width: 630px) {
+    .animals__palm {
+        width: 144px;
+        height: 73px;
+        left: -84px;
+    }
+
+    .animals__flower {
+        width: 117px;
+        height: 76px;
+        right: 0;
+        bottom: 0;
     }
 }

@@ -9,11 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: 10.375vw 0 6.20vw 0;
-}
-
-.promo__title {
-    
+    padding: 10.375vw 0 6.2vw 0;
 }
 
 .promo__text {
@@ -23,22 +19,25 @@
     font-size: 6.75vw;
     line-height: 74%;
     text-align: center;
+    position: relative;
     text-transform: uppercase;
     color: #fff;
-    z-index: 2;
+    z-index: 3;
 }
 
 .promo__text-yellow {
     color: $color-selection;
 }
 
-.circle-orange {
+.promo__text::before {
     width: 29.0625vw;
     height: 29.0625vw;
-    margin-top: -29.6875vw;
-    margin-left: -5.125vw;
+    margin: -4.625vw 0 0 -9vw;
     background: $color-primary;
     border-radius: 300px;
+    content: "";
+    position: absolute;
+    z-index: -1;
 }
 
 .promo__button-wrap {
@@ -71,7 +70,7 @@
 }
 
 .button_watch {
-    margin-top: 69px;
+    margin-top: 59px;
     margin-left: 94px;
 }
 
@@ -86,15 +85,15 @@
         line-height: 75%;
     }
     
-    .circle-orange {
+    .promo__text::before {
         width: 367px;
         height: 367px;
-        margin-top: -372px;
-        margin-left: -72px;
+        margin-top: -54px;
+        margin-left: -116px;
     }
     
     .button_watch {
-        margin-top: 46px;
+        margin-top: 42px;
         margin-left: 7px;
     }
     .promo__button-wrap {
@@ -104,7 +103,7 @@
 
 @media (max-width: 960px) {
     .promo__content {
-        width: 600px;
+        width: 93.75vw;
         padding: 84px 0 40px 0;
     }
     
@@ -113,11 +112,11 @@
         line-height: 75%;
     }
     
-    .circle-orange {
-        width: 237px;
-        height: 237px;
-        margin-top: -242px;
-        margin-left: -44px;
+    .promo__text::before {
+        width: 37.03125vw;
+        height: 37.0125vw;
+        margin-top: -6.25vw;
+        margin-left: -74px;
     }
 
     .promo__content .button_watch {
@@ -128,7 +127,11 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        margin-top: -4px;
+        margin-top: -8px;
         margin-right: 150px;
     }
+}
+
+@media (max-width: 960px) {
+
 }
