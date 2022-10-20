@@ -1,20 +1,29 @@
+import Game from './game.js';
+
 const body = document.querySelector('body');
 const header = document.createElement("header");
 const main = document.createElement("main");
 const menu = document.createElement("div");
 const menu_select = document.createElement("select");
-const score = document.createElement("div");
-const turns = document.createElement("span");
-const times = document.createElement("span");
+const scores = document.createElement("div");
+const score = document.createElement("span");
+const timer = document.createElement("span");
 const wrapper_header = document.createElement('div');
 const wrapper_main = document.createElement('div');
-const field = document.createElement('div');
-const cell = document.createElement('div');
+
+const mediaQuery1 = window.matchMedia("(max-width: 701px)");
+mediaQuery1.addEventListener('change', handleDisplayChange1);
+const mediaQuery2 = window.matchMedia("(min-width: 700px)");
+mediaQuery2.addEventListener('change', handleDisplayChange2);
+const mediaQuery3 = window.matchMedia("(min-width: 460px)");
+mediaQuery3.addEventListener('change', handleDisplayChange3);
+const mediaQuery4 = window.matchMedia("(max-width: 461px)");
+mediaQuery4.addEventListener('change', handleDisplayChange4);
 
 
 let menu_difficulty = [3, 4, 5, 6, 7, 8]
 let menu_buttons = ['New game', 'Sound', 'Records'];
-let size = 3;
+let size = 3, wrap_size = 600;
 
 menu_buttons = menu_buttons.map(item => {
     let elem = document.createElement("button");
@@ -34,185 +43,55 @@ body.appendChild(main);
 header.appendChild(wrapper_header);
 wrapper_header.appendChild(menu);
 main.appendChild(wrapper_main);
-wrapper_main.appendChild(score);
+wrapper_main.appendChild(scores);
 menu_select.replaceChildren(...menu_difficulty);
 menu.replaceChildren(menu_select,...menu_buttons);
-score.replaceChildren(turns, times);
+scores.replaceChildren(score, timer);
 
-turns.innerHTML = '0';
-times.innerHTML = '00:00:00'
+score.innerHTML = '0';
+timer.innerHTML = '00:00:00';
 
 wrapper_header.classList.add('wrapper');
 wrapper_main.classList.add('wrapper');
 menu.classList.add('menu');
 menu_select.classList.add('menu__field-size');
-score.classList.add('score');
-turns.classList.add('score__turns');
-times.classList.add('score__times');
-
+scores.classList.add('scores');
+score.classList.add('score__score');
+timer.classList.add('score__timer');
 
 menu_select.addEventListener('change', (event) => {
-    size = event.target.value;
-    console.log(event.target.value);
-    puzzle15.restart();
+    puzzle15.restart(event.target.value);
 })
 
-
-class Cell {
-    constructor({ position, elem, cellSize = 600/size, number}) {
-        this.cellSize = cellSize;
-        this.position = position;
-        this.number = number;
-        this.elem = elem;
-        this.elem.style.top = (position.y) * cellSize + 'px';
-        this.elem.style.left = (position.x) * cellSize + 'px';
-        this.elem.style.width = cellSize + 'px';
-        this.elem.style.height = cellSize + 'px';
-        this.elem.style.backgroundPosition = cellSize*position.x*(-1)+'px'+ ' ' + cellSize*position.y*(-1)+'px';
-    }
-
-    draw({ position }) {
-        this.position = position;
-        this.elem.style.top = (position.y) * this.cellSize + 'px';
-        this.elem.style.left = (position.x) * this.cellSize + 'px';
-        this.position = position;
+function handleDisplayChange1(mql) {
+    if (!mql.matches) {
+        puzzle15.changeCellsSize(600);
     }
 }
 
-class Field {
-    constructor (size) {
-        this.size = size;
-        this.fieldNumber = [];
-        for (let i = 0, count = 0; i < size; i++) {
-            this.fieldNumber.push([]);
-            for (let j = 0; j < size; j++, count++) {
-                this.fieldNumber[i].push(count);
-            }
-        }
-        this.field = [];
-        this.fieldDiv = document.createElement('div');
-        this.fieldDiv.classList.add('field');
-        wrapper_main.appendChild(this.fieldDiv);
-    }
-
-    removeField() {
-        wrapper_main.removeChild(this.fieldDiv);
-    }
-
-    push_row() {
-        this.field.push([]);
-    }
-
-    push(row, item) {
-        this.field[row].push(item);
-    }
-
-    findCell(number) {
-        for (let i of this.field) {
-            for (let j of i) {
-                if (number === j.number)
-                    return j;
-            }
-        }
-    }
-
-    getCell(row, col) {
-        return this.field[row][col];
-    }
-
-    getEmptyCell(row, col) {
-        if (row > (this.size-1) || col > (this.size-1) || row < 0 || col < 0) return null;
-        if (row > 0 && this.field[row-1][col].number === 0) return this.field[row-1][col];
-        if (col > 0 && this.field[row][col-1].number === 0) return this.field[row][col-1];
-        if (row < (this.size-1) && this.field[row+1][col].number === 0) return this.field[row+1][col];
-        if (col < (this.size-1) && this.field[row][col+1].number === 0) return this.field[row][col+1];
-        return null;
-    }
-
-    swapCells(cell1, cell2) {
-        let tmp = this.field[cell1.row][cell1.col];
-        this.field[cell1.row][cell1.col] = this.field[cell2.row][cell2.col];
-        this.field[cell2.row][cell2.col] = tmp;
-
-        this.field[cell2.row][cell2.col].draw({
-            position: {x: cell2.col, y: cell2.row},
-        });
-        this.field[cell1.row][cell1.col].draw({
-            position: {x: cell1.col, y: cell1.row},
-        });
-    }
-    
-    shuffle() {
-        let map = [];
+function handleDisplayChange2(mql) {
+    if (!mql.matches) {
+        puzzle15.changeCellsSize(400);
     }
 }
 
-class Game {
-    constructor(field = new Field(size), state = 'ready', countMoves = 0) {
-        this.field = field,
-        this.time = 0;
-        this.state = state;
-        this.countMoves = countMoves;
+function handleDisplayChange3(mql) {
+    if (!mql.matches) {
+        puzzle15.changeCellsSize(280);
     }
-
-    start() {
-        if (this.state === 'playing') return;
-        this.state = 'playing';
-        this.render();
-        this.startTimer();
-    }
-
-    stop() {}
-
-    restart() {
-        if (this.state === 'playing') {
-            this.field.removeField();
-            this.field = new Field(size);
-            this.render();
-            this.startTimer();
-        }
-    }
-
-    setState(newState) {
-        this.state = newState;
-    }
-
-    render() {
-        for (let i = 0, count = 1; i < size; i++) {
-            this.field.push_row();
-            for (let j = 0; j < size; j++, count++) {
-                if (count === (this.field.size*this.field.size)) count = 0;
-                let tmp = document.createElement('div');
-                tmp.classList.add('cell');
-                tmp.classList.add('cell-'+count%(size*size));
-                tmp.classList.add('cell-'+i+'-'+j);
-                tmp.addEventListener('click', this.move())
-                this.field.fieldDiv.appendChild(tmp);
-                this.field.push(i, new Cell({
-                    position: {x: j, y: i},
-                    elem: tmp,
-                    number: count
-                }))
-            }
-        }
-    }
-
-    move() {
-        return function(event) {
-            let cell = this.field.findCell(Number(event.target.classList[1].split('-')[1]));
-            let emptyCell = this.field.getEmptyCell(cell.position.y, cell.position.x);
-            this.field.swapCells({row: cell.position.y, col: cell.position.x}, {row: emptyCell.position.y, col: emptyCell.position.x});
-            this.countMoves++;
-        }.bind(this);
-    }
-
-    isSolved() {}
-
-    startTimer() {}
-    
-    isSolved() {}
 }
 
-const map = new Field(size);
-const puzzle15 = new Game(map);
+function handleDisplayChange4(mql) {
+    if (!mql.matches) {
+        puzzle15.changeCellsSize(400);
+    }
+}
+
+const puzzle15 = new Game(wrapper_main, wrap_size, timer, score, size);
 puzzle15.start();
+
+handleDisplayChange2(mediaQuery2);
+handleDisplayChange3(mediaQuery3);
+handleDisplayChange1(mediaQuery1);
+
+menu_buttons[0].addEventListener('click', () => {puzzle15.restart()});

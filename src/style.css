@@ -11,7 +11,7 @@
     justify-content: space-around;
 }
 
-.score {
+.scores {
     display: flex;
     justify-content: space-between;
 }
@@ -24,6 +24,7 @@
     /* display: flex;
     flex-flow: row wrap; */
     border: 4px solid rgb(125, 31, 213);
+    transition: 0.4s;
 }
 
 .cell {
@@ -34,7 +35,7 @@
     background-size: 600px;
     /* margin: 2px; */
     position: absolute;
-    transition: 1s;
+    transition: 0.4s;
 }
 
 .cell:hover {
