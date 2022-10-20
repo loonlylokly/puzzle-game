@@ -10,17 +10,11 @@ const wrapper_header = document.createElement('div');
 const wrapper_main = document.createElement('div');
 const field = document.createElement('div');
 const cell = document.createElement('div');
-let size = 3;
 
 
-let menu_difficulty = ['3x3', '4x4', '5x5', '6x6', '7x7', '8x8']
+let menu_difficulty = [3, 4, 5, 6, 7, 8]
 let menu_buttons = ['New game', 'Sound', 'Records'];
-let mapNumber = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 0],
-];
-// let map = [];
+let size = 3;
 
 menu_buttons = menu_buttons.map(item => {
     let elem = document.createElement("button");
@@ -30,21 +24,10 @@ menu_buttons = menu_buttons.map(item => {
 })
 menu_difficulty = menu_difficulty.map(item => {
     let elem = document.createElement("option");
-    elem.innerHTML = item;
+    elem.innerHTML = item+'x'+item;
+    elem.value = item;
     return elem;
 })
-
-// for (let i = 0, count = 0; i < mapNumber.length; i++) {
-//     map.push([]);
-//     for (let j = 0; j < mapNumber[i].length;j++) {
-//         map[i].push(document.createElement("div"));
-//         map[i][j].classList.add('cell');
-//         map[i][j].classList.add('cell-'+count);
-//         map[i][j].classList.add('cell-'+i+'-'+j);
-//         // map[i][j].addEventListener('click', moveCell);
-//         count++;
-//     }
-// }
 
 body.appendChild(header);
 body.appendChild(main);
@@ -55,8 +38,6 @@ wrapper_main.appendChild(score);
 menu_select.replaceChildren(...menu_difficulty);
 menu.replaceChildren(menu_select,...menu_buttons);
 score.replaceChildren(turns, times);
-// wrapper_main.appendChild(field);
-// map.forEach((row) => row.forEach((cell) => field.appendChild(cell)))
 
 turns.innerHTML = '0';
 times.innerHTML = '00:00:00'
@@ -69,16 +50,29 @@ score.classList.add('score');
 turns.classList.add('score__turns');
 times.classList.add('score__times');
 
+
+menu_select.addEventListener('change', (event) => {
+    size = event.target.value;
+    console.log(event.target.value);
+    puzzle15.restart();
+})
+
+
 class Cell {
-    constructor({ position, elem, cellSize = 200 }) {
+    constructor({ position, elem, cellSize = 600/size, number}) {
         this.cellSize = cellSize;
         this.position = position;
+        this.number = number;
         this.elem = elem;
-        this.elem.style.top = (position.y) * cellSize  + 'px';
+        this.elem.style.top = (position.y) * cellSize + 'px';
         this.elem.style.left = (position.x) * cellSize + 'px';
+        this.elem.style.width = cellSize + 'px';
+        this.elem.style.height = cellSize + 'px';
+        this.elem.style.backgroundPosition = cellSize*position.x*(-1)+'px'+ ' ' + cellSize*position.y*(-1)+'px';
     }
 
     draw({ position }) {
+        this.position = position;
         this.elem.style.top = (position.y) * this.cellSize + 'px';
         this.elem.style.left = (position.x) * this.cellSize + 'px';
         this.position = position;
@@ -91,11 +85,18 @@ class Field {
         this.fieldNumber = [];
         for (let i = 0, count = 0; i < size; i++) {
             this.fieldNumber.push([]);
-            for (let j = 0; j < size; j++) {
+            for (let j = 0; j < size; j++, count++) {
                 this.fieldNumber[i].push(count);
             }
         }
         this.field = [];
+        this.fieldDiv = document.createElement('div');
+        this.fieldDiv.classList.add('field');
+        wrapper_main.appendChild(this.fieldDiv);
+    }
+
+    removeField() {
+        wrapper_main.removeChild(this.fieldDiv);
     }
 
     push_row() {
@@ -106,26 +107,33 @@ class Field {
         this.field[row].push(item);
     }
 
+    findCell(number) {
+        for (let i of this.field) {
+            for (let j of i) {
+                if (number === j.number)
+                    return j;
+            }
+        }
+    }
+
     getCell(row, col) {
         return this.field[row][col];
     }
 
     getEmptyCell(row, col) {
         if (row > (this.size-1) || col > (this.size-1) || row < 0 || col < 0) return null;
-        if (row >= 0 && this.field[row-1][col] === 0) return this.field[row-1][col];
-        if (col >= 0 && this.field[row][col-1] === 0) return this.field[row][col-1];
-        if (row < (this.size-1) && this.field[row-1][col] === 0) return this.field[row+1][col];
-        if (col < (this.size-1)&& this.field[row-1][col] === 0) return this.field[row][col+1];
+        if (row > 0 && this.field[row-1][col].number === 0) return this.field[row-1][col];
+        if (col > 0 && this.field[row][col-1].number === 0) return this.field[row][col-1];
+        if (row < (this.size-1) && this.field[row+1][col].number === 0) return this.field[row+1][col];
+        if (col < (this.size-1) && this.field[row][col+1].number === 0) return this.field[row][col+1];
+        return null;
     }
 
     swapCells(cell1, cell2) {
-        console.log(this.field)
         let tmp = this.field[cell1.row][cell1.col];
         this.field[cell1.row][cell1.col] = this.field[cell2.row][cell2.col];
         this.field[cell2.row][cell2.col] = tmp;
-        
-        console.log(this.field,this.field[cell1.row][cell1.col], cell1.row, cell1.col);
-        
+
         this.field[cell2.row][cell2.col].draw({
             position: {x: cell2.col, y: cell2.row},
         });
@@ -140,7 +148,7 @@ class Field {
 }
 
 class Game {
-    constructor(field = new Field(), state = 'ready', countMoves = 0) {
+    constructor(field = new Field(size), state = 'ready', countMoves = 0) {
         this.field = field,
         this.time = 0;
         this.state = state;
@@ -149,63 +157,60 @@ class Game {
 
     start() {
         if (this.state === 'playing') return;
+        this.state = 'playing';
         this.render();
         this.startTimer();
     }
 
     stop() {}
 
-    restart() {}
+    restart() {
+        if (this.state === 'playing') {
+            this.field.removeField();
+            this.field = new Field(size);
+            this.render();
+            this.startTimer();
+        }
+    }
 
     setState(newState) {
         this.state = newState;
     }
 
-    render(map) {
-        const field = document.createElement('div');
-        field.classList.add('field');
-        wrapper_main.appendChild(field);
+    render() {
         for (let i = 0, count = 1; i < size; i++) {
             this.field.push_row();
             for (let j = 0; j < size; j++, count++) {
+                if (count === (this.field.size*this.field.size)) count = 0;
                 let tmp = document.createElement('div');
                 tmp.classList.add('cell');
                 tmp.classList.add('cell-'+count%(size*size));
                 tmp.classList.add('cell-'+i+'-'+j);
                 tmp.addEventListener('click', this.move())
-                field.appendChild(tmp);
+                this.field.fieldDiv.appendChild(tmp);
                 this.field.push(i, new Cell({
                     position: {x: j, y: i},
-                    elem: tmp
+                    elem: tmp,
+                    number: count
                 }))
             }
         }
-        console.log(this.map);
     }
 
     move() {
-        return function() {
-            let row = Number(event.target.classList[2].split('-')[1]);
-            let col = Number(event.target.classList[2].split('-')[2]);
-            let emptyCell = this.findEmptyCell(row, col);
-            this.swapCells({row: row, col: col}, {row: emptyCell.row, col: emptyCell.col});
+        return function(event) {
+            let cell = this.field.findCell(Number(event.target.classList[1].split('-')[1]));
+            let emptyCell = this.field.getEmptyCell(cell.position.y, cell.position.x);
+            this.field.swapCells({row: cell.position.y, col: cell.position.x}, {row: emptyCell.position.y, col: emptyCell.position.x});
             this.countMoves++;
-            // console.log(row, col, typeof this.countMoves, this.countMoves)
         }.bind(this);
     }
 
     isSolved() {}
 
     startTimer() {}
-
-    incrementMoves() {
-        this.countMoves++;
-    }
-
     
-    isSolved() {
-    
-    }
+    isSolved() {}
 }
 
 const map = new Field(size);
