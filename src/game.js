@@ -24,6 +24,7 @@ class Game {
         if (wrap_size) this.wrap_size = wrap_size;
         this.field.reset(this.size, this.wrap_size);
         this.render();
+        // this.field.shuffle();
         this.timer.reset();
         this.timer.start();
         this.score.reset();
@@ -54,12 +55,10 @@ class Game {
             if (emptyCell) {
                 this.field.swapCells({row: cell.position.y, col: cell.position.x}, {row: emptyCell.position.y, col: emptyCell.position.x});
                 this.score.incrementScore();
+                if (this.field.isSolved()) alert('Win');
             }
         }.bind(this);
     }
-    
-    
-    isSolved() {}
 }
 
 export default Game;

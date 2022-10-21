@@ -6,20 +6,8 @@ class Field {
         this.size = size;
         this.wrap_size = wrap_size;
         this.field = [];
-        this.fieldNumber = [];
         this.fieldDiv = null;
-        this.fillFieldNumber();
         this.setField(wrap_size);
-    }
-
-    
-    fillFieldNumber() {
-        for (let i = 0, count = 0; i < this.size; i++) {
-            this.fieldNumber.push([]);
-            for (let j = 0; j < this.size; j++, count++) {
-                this.fieldNumber[i].push(count);
-            }
-        }
     }
 
 
@@ -50,9 +38,7 @@ class Field {
         this.size = size;
         this.wrap_size = wrap_size;
         this.field = [];
-        this.fieldNumber = [];
         this.fieldDiv = null;
-        this.fillFieldNumber();
         this.setField(wrap_size);
     }
 
@@ -113,7 +99,25 @@ class Field {
 
     
     shuffle() {
-        
+        for(let i = 0; i < this.field.length; i++) {
+            for(let j = 0; j < this.field.length; j++) {
+                const randJ = Math.floor(Math.random() * this.field.length);
+                const randI = Math.floor(Math.random() * this.field.length);
+                this.swapCells(
+                    {row: this.field[i][j].position.y, col: this.field[i][j].position.x},
+                    {row: this.field[randI][randJ].position.y, col: this.field[randI][randJ].position.x}
+                )
+            }
+        }
+    }
+
+    isSolved() {
+        for(let i = 0; i < this.field.length; i++) {
+            for(let j = 0; j < this.field.length; j++) {
+                if (!this.field[i][j].isSolved()) return false;
+            }
+        }
+        return true;
     }
 }
 
