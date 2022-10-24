@@ -18,7 +18,7 @@ class Game {
         this.timer.start();
         this.score.reset();
         console.log(localStorage.getItem('gameSave'));
-        if (localStorage.getItem('gameSave') !== 'undefined' || localStorage.getItem('gameSave') !== null) this.load();
+        if (localStorage.getItem('gameSave') !== 'undefined' && localStorage.getItem('gameSave') !== null) this.load();
         else {
             this.render();
             this.field.shuffle();
