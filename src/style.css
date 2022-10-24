@@ -51,36 +51,47 @@ body {
 }
 
 .modal-ask {
+    display: none;
     top: 0;
     position: fixed;
     width: 100vw;
     height: 100vh;
     overflow:hidden;
     background: rgb(0, 0, 0, 0.7);
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     z-index: 1;
 }
 
 .modal {
-     width: 200px;
-     height: 200px;
+    width: 200px;
+    height: 130px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-radius: 10px;
 }
 
 .form {
     display: flex;
     flex-direction: column;
+    margin-top: 5px;
+    width: 100%;
+    align-items: center;
 }
 
 .form__input {
-
+    margin-top: 8px;
 }
 
 .form__button-save {
-
+    width: fit-content;
+    margin-top: 14px;
 }
 
 .form__button-close {
-
+    width: fit-content;
+    text-align: end;
 }

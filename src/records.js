@@ -15,15 +15,15 @@ class Records {
         this.modal.classList.add('modal')
         this.modalAskElem.appendChild(this.modal);
         
+        this.buttonClose = document.createElement('div');
+        this.buttonClose.classList.add('form__button-close');
+        this.modal.appendChild(this.buttonClose);
+        this.buttonClose.innerText = 'X';
+        this.buttonClose.addEventListener('click', this.closeModalview())
 
         this.modalForm = document.createElement('div');
         this.modalForm.classList.add('form')
         this.modal.appendChild(this.modalForm);
-
-        this.buttonClose = document.createElement('div');
-        this.buttonClose.classList.add('form__button-close');
-        this.modalForm.appendChild(this.buttonClose);
-        this.buttonClose.innerText = 'X';
 
         this.labelName = document.createElement('label');
         this.labelName.classList.add('form__label');
@@ -37,18 +37,65 @@ class Records {
         this.buttonSave = document.createElement('button');
         this.buttonSave.classList.add('form__button-save');
         this.modalForm.appendChild(this.buttonSave);
+        this.buttonSave.innerText = 'SAVE'
+        this.buttonSave.addEventListener('click', this.saveRecord());
     }
 
-    save(score, time) {
+    initRecordsView() {
+
+    }
+
+    addNewRecord(score, time) {
         console.log(score, time);
-        // модальное окно с вводом имени и кнопкой сохранить
-        // если кнопку нажали, то сохраняем в локал сторедж
-        // иначе закрываем окно
+        this.modalAskElem.style.display = 'flex';
     }
 
-    show() {
+    addRecord(value) {
+        let records;
+        if (localStorage.getItem('records') !== 'undefined') {
+            records = JSON.parse(localStorage.getItem('records'));
+            for (let i = 0; i < 10; i++) {
+                if (records[i] === null || records[i] < value) {
+                    records[i] = value;
+                }
+            }
+        } else {
+            records = {
+                0: value,
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                5: 0,
+                6: 0,
+                7: 0,
+                8: 0,
+                9: 0,
+            };
+        }
+        localStorage.setItem('records', JSON.stringify(records));
+    }
+
+    showRecords() {
+        let records = localStorage.getItem('records');
         // загрузить из локалстореджа данные о рекордах
         // показать модальное окно с рекордами
+    }
+
+    saveRecord() {
+        return () => {
+            if (this.inputName.value !== '') {
+                this.addRecords(this.inputName.value);
+            }
+            this.showRecords();
+        }
+    }
+
+    closeModalview() {
+        return () => {
+            console.log('qqq');
+            this.modalAskElem.style.display = 'none';
+        }
     }
 
     closeRecords() {

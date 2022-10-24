@@ -17,15 +17,24 @@ class Game {
     start() {
         this.timer.start();
         this.score.reset();
-        // if (localStorage.getItem('gameSave') !== 'undefined') this.load();
-        // else this.render();
-        this.render();
+        console.log(localStorage.getItem('gameSave'));
+        if (localStorage.getItem('gameSave') !== 'undefined') this.load();
+        else {
+            this.render();
+            this.field.shuffle();
+            this.timer.reset();
+            this.timer.start();
+            this.score.reset();
+        }
+        // this.render();
+        // this.records.addNewRecord(this.score.score, this.timer.timerElem.innerText)
     }
 
 
     restart(size = null, wrap_size = null) {
         if (size) this.size = size;
         if (wrap_size) this.wrap_size = wrap_size;
+        localStorage.setItem('gameSave', 'undefined')
         this.field.reset(this.size, this.wrap_size);
         this.render();
         this.field.shuffle();
