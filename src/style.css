@@ -1,6 +1,10 @@
 /* @import "~normalize.css";
 @import "roboto.css"; */
 
+body {
+    margin: 0;
+}
+
 .wrapper {
     max-width: 612px;
     margin: 0 auto;
@@ -44,4 +48,39 @@
 
 .cell-0 {
     display: none;
+}
+
+.modal-ask {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow:hidden;
+    background: rgb(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.modal {
+     width: 200px;
+     height: 200px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input {
+
+}
+
+.form__button-save {
+
+}
+
+.form__button-close {
+
 }
