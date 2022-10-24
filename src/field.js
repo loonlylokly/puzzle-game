@@ -7,11 +7,16 @@ class Field {
         this.wrap_size = wrap_size;
         this.field = [];
         this.fieldDiv = null;
-        this.setField(wrap_size);
+        this.setFieldElem(wrap_size);
     }
 
 
-    setField(wrap_size) {
+    setField() {
+        
+    }
+
+
+    setFieldElem(wrap_size) {
         this.fieldDiv = document.createElement('div');
         this.fieldDiv.classList.add('field');
         this.wrapper.appendChild(this.fieldDiv);
@@ -39,7 +44,7 @@ class Field {
         this.wrap_size = wrap_size;
         this.field = [];
         this.fieldDiv = null;
-        this.setField(wrap_size);
+        this.setFieldElem(wrap_size);
     }
 
 
@@ -109,6 +114,7 @@ class Field {
                 )
             }
         }
+        if (!this.isCorrect()) this.shuffle();
     }
 
     isSolved() {
@@ -118,6 +124,16 @@ class Field {
             }
         }
         return true;
+    }
+
+    isCorrect() {
+        let invCount = 0;
+        let arr = this.field.flat();
+        for (let i = 0; i < 9 - 1; i++)
+            for (let j = i+1; j < 9; j++)
+                if (arr[j].number && arr[i].number &&  arr[i].number > arr[j].number)
+                    invCount++;
+        return (invCount%2 == 0)
     }
 }
 

@@ -50,7 +50,6 @@ class Cell {
     }
 
     isSolved() {
-        // console.log(this.position.y, this.position.x, this.number-1, this.size, this.position.x+this.position.y*this.size, this.number-1);
         if(this.number === 0 && (this.position.x + this.position.y*this.size) === this.size*this.size-1) return true;
         return this.position.x+this.position.y*this.size === this.number-1;
     }

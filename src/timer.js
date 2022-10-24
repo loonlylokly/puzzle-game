@@ -8,6 +8,9 @@ class Timer {
         this.timerElem = timerElem;
     }
 
+    setSeconds(seconds) {
+        this.seconds = seconds;
+    }
 
     start() {
         if (this.interval) return;
