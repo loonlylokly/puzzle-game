@@ -1,0 +1,46 @@
+{
+  "name": "loonlylokly-jsfe2022q3",
+  "version": "1.0.0",
+  "description": "puzzle-15 game",
+  "private": "true",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/loonlylokly-JSFE2022Q3.git"
+  },
+  "keywords": [
+    "puzzle-15",
+    "webpack",
+    "js",
+    "canvas"
+  ],
+  "author": "lonlylokly (github.com/loonlylokly)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/loonlylokly-JSFE2022Q3/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/loonlylokly-JSFE2022Q3#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.6",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}

@@ -1,0 +1,97 @@
+/* @import "~normalize.css";
+@import "roboto.css"; */
+
+body {
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 612px;
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    /* display: flex;
+    flex-flow: row wrap; */
+    border: 4px solid rgb(125, 31, 213);
+    transition: 0.4s;
+}
+
+.cell {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    background: url(./cat.jpg);
+    background-size: 600px;
+    /* margin: 2px; */
+    position: absolute;
+    transition: 0.4s;
+}
+
+.cell:hover {
+    filter: brightness(60%)
+}
+
+.cell-0 {
+    display: none;
+}
+
+.modal-ask {
+    display: none;
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow:hidden;
+    background: rgb(0, 0, 0, 0.7);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.modal {
+    width: 200px;
+    height: 130px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-radius: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    width: 100%;
+    align-items: center;
+}
+
+.form__input {
+    margin-top: 8px;
+}
+
+.form__button-save {
+    width: fit-content;
+    margin-top: 14px;
+}
+
+.form__button-close {
+    width: fit-content;
+    text-align: end;
+}
