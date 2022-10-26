@@ -12,17 +12,17 @@ class Records {
         body.appendChild(this.modalAskElem);
         
         this.modal = document.createElement('div');
-        this.modal.classList.add('modal')
+        this.modal.classList.add('modal');
         this.modalAskElem.appendChild(this.modal);
         
         this.buttonClose = document.createElement('div');
         this.buttonClose.classList.add('form__button-close');
         this.modal.appendChild(this.buttonClose);
         this.buttonClose.innerText = 'X';
-        this.buttonClose.addEventListener('click', this.closeModalview())
+        this.buttonClose.addEventListener('click', this.closeModalview());
 
         this.modalForm = document.createElement('div');
-        this.modalForm.classList.add('form')
+        this.modalForm.classList.add('form');
         this.modal.appendChild(this.modalForm);
 
         this.labelName = document.createElement('label');
@@ -37,12 +37,45 @@ class Records {
         this.buttonSave = document.createElement('button');
         this.buttonSave.classList.add('form__button-save');
         this.modalForm.appendChild(this.buttonSave);
-        this.buttonSave.innerText = 'SAVE'
+        this.buttonSave.innerText = 'SAVE';
         this.buttonSave.addEventListener('click', this.saveRecord());
     }
 
     initRecordsView() {
+        const body = document.querySelector('body');
+        this.modalView = document.createElement('div');
+        this.modalView.classList.add('modal-view');
+        body.appendChild(this.modalView);
 
+        this.recordsTable = document.createElement('div');
+        this.recordsTable.classList.add('records-view');
+        this.modalView.appendChild(this.recordsTable);
+
+        this.buttonClose = document.createElement('div');
+        this.buttonClose.classList.add('button-close');
+        this.recordsTable.appendChild(this.buttonClose);
+        this.buttonClose.innerText = 'X';
+        this.buttonClose.addEventListener('click', this.closeRecords());
+
+        this.tableWtapper = document.createElement('div');
+        this.tableWtapper.classList.add('table-wrapper');
+        this.recordsTable.appendChild(this.tableWtapper);
+
+        this.recordsHeader = document.createElement('h3');
+        this.recordsHeader.classList.add('table-header');
+        this.tableWtapper.appendChild(this.recordsHeader);
+
+        this.table = document.createElement('table');
+        this.table.classList.add('records-table');
+        this.recordsTable.appendChild(this.table);
+
+        this.th = ['№', 'Name', 'Score', 'Time']
+        for (let i = 0; i < 4; i++) {
+            this.th[0] = (document.createElement('th'));
+            this.th[0].innerText = '';
+        }
+
+        this.td = [];
     }
 
     addNewRecord(score, time) {
@@ -78,8 +111,11 @@ class Records {
 
     showRecords() {
         let records = localStorage.getItem('records');
-        // загрузить из локалстореджа данные о рекордах
-        // показать модальное окно с рекордами
+        // if (localStorage.getItem('gameSave') !== 'undefined' && localStorage.getItem('gameSave') !== null) this.load();
+        // else {
+        this.modalAskElem.style.display = 'none';
+        this.initRecordsView();
+
     }
 
     saveRecord() {
@@ -93,13 +129,14 @@ class Records {
 
     closeModalview() {
         return () => {
-            console.log('qqq');
             this.modalAskElem.style.display = 'none';
         }
     }
 
     closeRecords() {
-        // закрыть модальное окно при нажатие на крестик или внешнюю область
+        return () => {
+            this.modalAskElem.style.display = 'flex';
+        }
     }
 }
 

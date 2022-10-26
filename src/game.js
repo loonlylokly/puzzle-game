@@ -18,16 +18,16 @@ class Game {
         this.timer.start();
         this.score.reset();
         console.log(localStorage.getItem('gameSave'));
-        if (localStorage.getItem('gameSave') !== 'undefined' && localStorage.getItem('gameSave') !== null) this.load();
-        else {
-            this.render();
-            this.field.shuffle();
-            this.timer.reset();
-            this.timer.start();
-            this.score.reset();
-        }
-        // this.render();
-        // this.records.addNewRecord(this.score.score, this.timer.timerElem.innerText)
+        // if (localStorage.getItem('gameSave') !== 'undefined' && localStorage.getItem('gameSave') !== null) this.load();
+        // else {
+        //     this.render();
+        //     this.field.shuffle();
+        //     this.timer.reset();
+        //     this.timer.start();
+        //     this.score.reset();
+        // }
+        this.render();
+        this.records.addNewRecord(this.score.score, this.timer.timerElem.innerText)
     }
 
 
@@ -118,7 +118,7 @@ class Game {
 
 
     win() {
-        this.records.save(this.score.score, this.timer.timerElem.innerText);
+        this.records.addNewRecord(this.score.score, this.timer.timerElem.innerText);
         console.log('Win');
     }
 
